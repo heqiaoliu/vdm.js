@@ -12,7 +12,7 @@
  *
  */
 
-/**
+/********************************************************************************
  *	We need to learn design pattern from JqueryUI,
  *	but for now, let's have the work done quick and clean.
  *	---HQ
