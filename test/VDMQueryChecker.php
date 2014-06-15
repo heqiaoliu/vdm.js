@@ -14,13 +14,17 @@ class VDMQueryChecker{
 	public static function checkToken($query){
 		if(!array_key_exists(self::$TYPE,$query)){
 			throw new Exception(self::$ERR["M_TYPE"][1],self::$ERR["M_TYPE"][0]);
-			return;
 		}
 		if(!array_key_exists(self::$PARAM,$query)){
 			throw new Exception(self::$ERR["M_PARAM"][1],self::$ERR["M_PARAM"][0]);
-			return;
 		}
 		return $query;
+	}
+
+	public static function checkType($type,$types){
+		if(!in_array($type,$types)){
+			throw new Exception(self::$ERR["I_TYPE"][1],self::$ERR["I_TYPE"][0]);
+		}
 	}
 
 	public static function checkParam($pStr){
