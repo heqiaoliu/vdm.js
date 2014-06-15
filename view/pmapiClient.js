@@ -2,19 +2,19 @@ var pmapiClient=(function($){
 	/**
 	 * Private properties.
 	 */
-	var PMAPIURL="http://vdm.sdsu.edu/data/api/pmapi.php",
-	API_QUERY_GETBACTERIALIST="type=getBacteriaList&mid=%MID%",
-	API_QUERY_GETBACTERIAS="type=getBacterias&param=%PARAM%&mid=%MID%";
+	var PMAPIURL="//localhost/vdm.js/test/pmapi-emu.php",//need to be rewrite.
+	API_QUERY_GETBACTERIALIST="type=getBacteriaList&param=null&mid=%MID%",
+	API_QUERY_GETBACTERIA="type=getBacteria&param=%PARAM%&mid=%MID%";
 
 	/**
 	 * Add methods to String properties.
 	 */
 	String.prototype.setParam=function(paramStr){
-		this.replace("%PARAM%",paramStr); 
+		return this.replace("%PARAM%",paramStr); 
 	}
 
 	String.prototype.setMid=function(mid){
-		this.replace("%MID%",mid);
+		return this.replace("%MID%",mid);
 	}
 
 	/**
@@ -35,8 +35,14 @@ var pmapiClient=(function($){
 	}
 
 	return {
-		getBacteriaList:function(mid){
-			getFromPmapi(API_QUERY_GETBACTERIALIST.setMid(mid),test);
+		init:function(url){
+			PMAPIURL=url;
+		},
+		getBacteriaList:function(mid,callback){
+			getFromPmapi(API_QUERY_GETBACTERIALIST.setMid(mid),callback);
+		},
+		getBacteria:function(mid,param,callback){
+			getFromPmapi(API_QUERY_GETBACTERIA.setMid(mid).setParam(param),test,callback);
 		}
 	}
 })(jQuery);
