@@ -1,2 +1,9 @@
+#Jun, 15, 2014
+	--HQ
+	test/ contains pmapi emulator(unfinished), which should returns small subset of database info.
+	view/pmapiClient.js is to communicate with pmapi(/emulator) to get {json} data. Ajax does not allow communicate with remote hosts. So test is for pmapiClient testing.
+	module_pm.js is the file of pm modules.
+	
+
 #May, 23, 2014
 	-Initialization
