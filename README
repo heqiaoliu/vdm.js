@@ -11,11 +11,17 @@
 	#FOLDER: test/
 		contains pmapi emulator(unfinished), which should returns small subset of database info.
 		test/pmapi-emu.php can be deployeed on apache server for testing.
+
+		@pmapi-emu.php now response to 4 types of request: getBacteriaList, getBacteria, getExperiment, getPlate.
+		(name of types of request are slicely different from old pmapi).
+
 	#view/pmapiClient.js 
 		is to communicate with pmapi(/emulator) to get {json} data.
 		Ajax does not allow communicate with remote hosts. So using test/ for pmapiClient testing.
+
+		Once pmapi-emu.php is configure, pmapiClient.js suppose to be able to request data from the pmapi-emu
 	#view/module_pm.js 
-		is the file of pm modules.
+		is the file of pm modules. Should be build with pmapiCient.
 	
 
 #May, 23, 2014
