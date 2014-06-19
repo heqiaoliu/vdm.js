@@ -1,0 +1,21 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular.min.js"></script>
+<script >
+
+</script>
+</head>
+<body ng-app>
+<div ng-controller="temp">
+	<table>
+<tbody >
+	<tr ng-repeat="row in wells">
+		<td ng-repeat="well in row">{{well.well_num}}</td>
+	</tr>
+	</tbody>
+</table>
+	
+</div>
+</body>
+
+</html>

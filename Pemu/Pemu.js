@@ -3,12 +3,11 @@
  * Pemu: Plate Enulator
  * Description:
  * 	Pemu initialize a plate (HTML <table>) with defined rows and columns of wells.
- * ############...
- * # (A1) (A2) ...
- * # (B1) (B2) ...
+ * <table>...
  * . .
  * . .
  * . .
+ * </table>
  *
  */
 
